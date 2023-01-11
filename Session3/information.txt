@@ -1,0 +1,40 @@
+How many layers,
+** MaxPooling **
+
+**1x1 Convolutions **
+
+1x1 convolution helps us to to merge our 512 kernels into 32 richer kernels
+
+1x1 is computation less expensive.
+1x1 is not even a proper convolution, as we can, instead of convolving each pixel separately, multiply the whole channel with just 1 number
+1x1 is merging the pre-existing feature extractors, creating new ones, keeping in mind that those features are found together (like edges/gradients which make up an eye)
+1x1 is performing a weighted sum of the channels, so it can so happen that it decides not to pick a particular feature that defines the background and not a part of the object. This is helpful as this acts like filtering. Imagine the last few layers seeing only the dog, instead of the dog sitting on the sofa, the background walls, painting on the wall, shoes on the floor, and so on. If the network can filter out unnecessary pixels, later layers can focus on describing our classes more, instead of defining the whole image. 
+
+3x3 Convolutions,
+Receptive Field,
+
+11x11, as that's the receptive field that we are trying to achieve before we add transformations (like channel size reduction using MaxPooling)
+512 kernels, as that is what we would need at a minimum to describe all the edges and gradients for the kind of images we are working with (ImageNet)
+The receptive field of 30x30 is again important for us because that is where we are "hoping" from textures. 
+
+** SoftMax, **
+
+Learning Rate,
+Kernels and how do we decide the number of kernels?
+Batch Normalization,
+Image Normalization,
+Position of MaxPooling,
+Concept of Transition Layers,
+Position of Transition Layer,
+
+Transistion block after 11 RF
+Transition block after 30 RF
+
+DropOut
+When do we introduce DropOut, or when do we know we have some overfitting
+The distance of MaxPooling from Prediction,
+The distance of Batch Normalization from Prediction,
+When do we stop convolutions and go ahead with a larger kernel or some other alternative (which we have not yet covered)
+How do we know our network is not going well, comparatively, very early
+Batch Size, and effects of batch size
+etc (you can add more if we missed it here)
