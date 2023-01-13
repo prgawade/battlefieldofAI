@@ -1,4 +1,3 @@
-## Model Architecture ## 
 
-## Note the average pooling is applied in forward function ##
+### Note: average pooling is applied in forward function ###
 
